@@ -11,10 +11,14 @@
         - http://blog.csdn.net/zzwwjjdj1/article/details/51886402
     - 第1步
         - 全局安装2个模块
-        - express、express-generator
-              - 在命令行输入:
-              - npm install -g express
-              - npm install -g express-generator
+        - express、express-generator   
+        
+              - 在命令行输入:   
+              
+              - npm install -g express   
+              
+              - npm install -g express-generator   
+              
 
 
 - 对接微信公众号
@@ -23,21 +27,36 @@
           - sha1 : 加密模块
           - 安装 : npm install sha1 -save
       - 第2步
-          - 微信公众号：接口配置和签名验证
-                -（1）接口配置
-                      - 到微信公众平台，填写服务器配置
-                -（2）验证服务器地址的有效性
-                      - 说明
-                          - 填写服务器配置后
-                                - 微信服务器会轮询发起GET请求到服务器地址
-                                    - 接收请求，拿到入参：signature(微信加密签名),timestamp(时间戳),nonce(随机数),echostr(随机字符串)
-                      - doc
-                          - http://blog.csdn.net/zzwwjjdj1/article/details/52222137
-                      - create a folder:common
-                          - create a file:utils.js
-                      - create a folder:config
-                          - create a file:config.json
-                      - repair app.js
+          - 微信公众号：接口配置和签名验证   
+          
+                -（1）接口配置   
+                
+                      - 到微信公众平台，填写服务器配置   
+                      
+                -（2）验证服务器地址的有效性   
+                
+                      - 说明   
+                      
+                          - 填写服务器配置后   
+                          
+                                - 微信服务器会轮询发起GET请求到服务器地址   
+                                
+                                    - 接收请求，拿到入参：signature(微信加密签名),timestamp(时间戳),nonce(随机数),echostr(随机字符串)   
+                                    
+                      - doc   
+                      
+                          - http://blog.csdn.net/zzwwjjdj1/article/details/52222137   
+                          
+                      - create a folder:common   
+                      
+                          - create a file:utils.js   
+                          
+                      - create a folder:config   
+                      
+                          - create a file:config.json   
+                          
+                      - repair app.js   
+                      
       - 第3步
           - 获取接口调用凭据
               - 微信公众号：access_token获取与保存

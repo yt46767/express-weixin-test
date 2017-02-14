@@ -6,7 +6,7 @@
 用nodejs之express来开发，实现第三方对接开发后台。
 
 ##### 正文
-|- 创建后台框架——express   
+###创建后台框架——express   
 
     |- doc
         |- http://blog.csdn.net/zzwwjjdj1/article/details/51886402
@@ -16,7 +16,7 @@
               |- 在命令行输入:   
               |- npm install -g express   
               |- npm install -g express-generator
-|- 对接微信公众号   
+###对接微信公众号   
 
       |- 第1步
           |- 使用的模块

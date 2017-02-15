@@ -15,6 +15,9 @@ var users = require('./routes/users');
 // [微信公众测试号：接口配置和签名验证]
 var wechat = require('./routes/wechat');
 
+// 接口：/accessToken
+var acceptAccessToken = require('./routes/acceptAccessToken');
+
 var app = express();
 
 // view engine setup
@@ -29,13 +32,15 @@ app.use(bodyParser.urlencoded({ extended: false }));                    // body�
 app.use(cookieParser());                                                // 使用express的中间件：cookie
 app.use(express.static(path.join(__dirname, 'public')));                //
 
-// [微信公众号：接口配置和签名验证]
-app.use(utils.sign(config));
-
-app.use('/', index);
 app.use('/users', users);
+// 接口：/accessToken
+app.use('/acceptAccessToken',acceptAccessToken);
+
+// [微信公众号：接口配置和签名验证]
+app.use(utils.sign(config));            // 【重点：路由在此及其之后，都将进入签名验证函数】
+app.use('/', index);                    // 微信公众号对接的url地址
 // [微信公众测试号：接口配置和签名验证]
-app.use('/wechat',wechat);
+app.use('/wechat',wechat);              // 微信公众测试号对接的url地址
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
